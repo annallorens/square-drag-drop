@@ -5,6 +5,7 @@ function Square(props) {
         <div
             id={props.id}
             className='square'
+            style={{ backgroundColor: props.backgroundColor }}
         >
         </div>
     )

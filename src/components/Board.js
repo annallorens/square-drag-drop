@@ -8,6 +8,12 @@ class Board extends React.Component {
         super(props);
         this.state = {
             squares: Array(9).fill(null),
+            backgroundColor: [
+                '#ffcc00', '#cc6600', '#ffcc99', '#ff9999',
+                '#ff4da6', ' #bf4080', '#0089BA', '#cc9900',
+                '#4FFBDF', '#845EC2', '#B39CD0', '#008F7A',
+                '#0089BA', '#00C9A7', '#D5CABD', '#F9F871'
+            ],
         };
     }
 
@@ -15,11 +21,11 @@ class Board extends React.Component {
     renderBoard() {
         const rows = Array(4);
         for (let i = 0;i < rows.length;i++) {
-            let cells = [];
+            let square = [];
             for (let j = 0;j < rows.length;j++) {
-                cells.push(this.renderSquare(rows.length * i + j));
+                square.push(this.renderSquare(rows.length * i + j));
             }
-            rows[i] = <div className="board-row" key={i}>{cells}</div>;
+            rows[i] = <div className="board-row" key={i}>{square}</div>;
         }
         return rows;
     }
@@ -28,6 +34,7 @@ class Board extends React.Component {
         return (
             <Square
                 key={i}
+                backgroundColor={this.state.backgroundColor[i]}
             />
         );
     }
