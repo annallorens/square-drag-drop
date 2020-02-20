@@ -7,14 +7,17 @@ class Board extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            squares: Array(9).fill(null),
-            backgroundColor: [
-                '#ffcc00', '#cc6600', '#ffcc99', '#ff9999',
-                '#ff4da6', ' #bf4080', '#0089BA', '#cc9900',
-                '#4FFBDF', '#845EC2', '#B39CD0', '#008F7A',
-                '#0089BA', '#00C9A7', '#D5CABD', '#F9F871'
-            ],
+            squareDragging: null,
+            squareEntered: null,
         };
+
+        this.onDrop = (e) => {
+            e.preventDefault();
+            const squareId = e.dataTransfer.getData('squareId');
+            const card = document.getElementById(squareId);
+            card.style.display = '';
+            e.target.appendChild(card);
+        }
     }
 
     // Create a board 4*4 and fill it with square elements
@@ -34,7 +37,7 @@ class Board extends React.Component {
         return (
             <Square
                 key={i}
-                backgroundColor={this.state.backgroundColor[i]}
+                id={i}
             />
         );
     }
@@ -42,7 +45,9 @@ class Board extends React.Component {
     render() {
         const board = this.renderBoard();
         return (
-            <div>{board}</div>
+            <div onDrop={this.onDrop}>
+                {board}
+            </div>
         );
     }
 }
