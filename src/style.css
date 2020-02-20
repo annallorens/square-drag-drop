@@ -17,4 +17,5 @@
 
 .square.over {
   border: 3px dashed #000;
+  opacity: 70%;
 }
