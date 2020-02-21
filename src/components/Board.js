@@ -1,8 +1,6 @@
 import React from 'react';
 import Square from './Square';
 
-
-
 class Board extends React.Component {
     constructor(props) {
         super(props);
@@ -10,7 +8,7 @@ class Board extends React.Component {
             backgroundColor:
                 [
                     '#001f3f', '#0074D9', '#7FDBFF', '#39CCCC',
-                    '#3D9970', ' #2ECC40', '#01FF70', '#FFDC00',
+                    '#3D9970', '#2ECC40', '#01FF70', '#FFDC00',
                     '#FF851B', '#FF4136', '#85144b', '#F012BE',
                     '#B10DC9', '#111111', '#AAAAAA', '#DDDDDD'
                 ],
@@ -24,15 +22,17 @@ class Board extends React.Component {
         }
 
         this.onDrop = (e) => {
-            const dropEl = e.target;
+            const dropSquare = e.target;
             const dragSquareId = e.dataTransfer.getData('dragSquareId');
-            // update squares style
-            dropEl.classList.remove('over');
-            this.swapColors(dragSquareId, dropEl.id);
+
+            // remove highlight of drop square when square drops on it
+            dropSquare.classList.remove('over');
+
+            this.swapColors(dragSquareId, dropSquare.id);
         }
     }
 
-    // update 'backgoungColor' with new the new squares positions
+    // swap 'backgoungColor' of dropped and dragged squares
     swapColors(from, to) {
         const backgroundColor = this.state.backgroundColor.slice();
         [backgroundColor[from], backgroundColor[to]] = [backgroundColor[to], backgroundColor[from]];
@@ -41,7 +41,7 @@ class Board extends React.Component {
         });
     }
 
-    // Create a board 4*4 and fill it with square components
+    // create a board 4*4 and fill it with square components
     renderBoard() {
         const rows = Array(4);
         for (let i = 0;i < rows.length;i++) {
@@ -59,6 +59,8 @@ class Board extends React.Component {
             <Square
                 key={i}
                 id={i}
+                className='square'
+                draggable='true'
                 backgroundColor={this.state.backgroundColor[i]}
             />
         );

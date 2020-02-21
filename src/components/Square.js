@@ -7,10 +7,10 @@ function Square(props) {
     const dragStart = e => {
         const target = e.target;
         draggingSquareId = target.id;
-        // Set the drag's format and data.
+        // set the drag's format and data.
         e.dataTransfer.setData('dragSquareId', target.id);
 
-        // visual effect to avoid duplicate object when drag starts
+        // add opacity when drag starts
         setTimeout(() => {
             target.style.opacity = '0.1';
         }, 0);
@@ -24,23 +24,24 @@ function Square(props) {
     }
 
     const dragEnd = e => {
+        // remove opacity when drag ends
         e.target.style.opacity = '';
     }
 
     const dragEnter = e => {
-        // highlight drop target when the draggable element enters it
+        // highlight drop square when the draggable square enters it
         e.target.classList.add('over');
     }
 
     const dragLeave = e => {
-        // reset border of drop target when the draggable element leaves it
+        // remove highlight of drop square when the draggable square leaves it
         e.target.classList.remove('over');
     }
 
     return (
         <div
-            className='square'
-            draggable="true"
+            className={props.className}
+            draggable={props.draggable}
             id={props.id}
             style={{ backgroundColor: props.backgroundColor }}
             onDragStart={dragStart}
