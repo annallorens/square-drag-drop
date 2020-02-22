@@ -2,7 +2,7 @@ import React from 'react'
 
 function Square(props) {
 
-    let draggingSquareId;
+    let draggingSquareId = "";
 
     const dragStart = e => {
         const target = e.target;
@@ -29,10 +29,8 @@ function Square(props) {
     }
 
     const dragEnter = e => {
-        if (draggingSquareId) {
-            // highlight drop square when the draggable square enters it
-            e.target.classList.add('over');
-        }
+        // highlight drop square when the draggable square enters it
+        e.target.classList.add('over');
     }
 
     const dragLeave = e => {
@@ -42,6 +40,7 @@ function Square(props) {
 
     return (
         <div
+            data-testid='square'
             className={props.className}
             draggable={props.draggable}
             id={props.id}
