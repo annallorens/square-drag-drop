@@ -25,10 +25,11 @@ class Board extends React.Component {
             const dropSquare = e.target;
             const dragSquareId = e.dataTransfer.getData('dragSquareId');
 
-            // remove highlight of drop square when square drops on it
-            dropSquare.classList.remove('over');
-
-            this.swapColors(dragSquareId, dropSquare.id);
+            if (dragSquareId) {
+                // remove highlight of drop square when square drops on it
+                dropSquare.classList.remove('over');
+                this.swapColors(dragSquareId, dropSquare.id);
+            }
         }
     }
 

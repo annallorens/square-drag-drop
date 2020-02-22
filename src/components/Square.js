@@ -29,8 +29,10 @@ function Square(props) {
     }
 
     const dragEnter = e => {
-        // highlight drop square when the draggable square enters it
-        e.target.classList.add('over');
+        if (draggingSquareId) {
+            // highlight drop square when the draggable square enters it
+            e.target.classList.add('over');
+        }
     }
 
     const dragLeave = e => {
