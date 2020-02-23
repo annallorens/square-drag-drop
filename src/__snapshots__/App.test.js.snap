@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should create snapshot 1`] = `
+<div
+  data-testid="board"
+  onDragOver={[Function]}
+  onDrop={[Function]}
+>
+  <div
+    className="board-row"
+  >
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={0}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#001f3f",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={1}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#0074D9",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={2}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#7FDBFF",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={3}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#39CCCC",
+        }
+      }
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={4}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#3D9970",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={5}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#2ECC40",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={6}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#01FF70",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={7}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FFDC00",
+        }
+      }
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={8}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FF851B",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={9}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#FF4136",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={10}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#85144b",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={11}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#F012BE",
+        }
+      }
+    />
+  </div>
+  <div
+    className="board-row"
+  >
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={12}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#B10DC9",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={13}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#111111",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={14}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#AAAAAA",
+        }
+      }
+    />
+    <div
+      className="square"
+      data-testid="square"
+      draggable="true"
+      id={15}
+      onDragEnd={[Function]}
+      onDragEnter={[Function]}
+      onDragLeave={[Function]}
+      onDragOver={[Function]}
+      onDragStart={[Function]}
+      style={
+        Object {
+          "backgroundColor": "#DDDDDD",
+        }
+      }
+    />
+  </div>
+</div>
+`;

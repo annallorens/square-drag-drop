@@ -1,9 +1,20 @@
+import { create, act } from 'react-test-renderer';
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import ReacDOM from 'react-dom';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import App from './app.js';
+
+let root;
+
+it('renders render app correctly', () => {
+    const div = document.createElement('div');
+    ReacDOM.render(<App />, div);
+});
+
+
+it('should create snapshot', () => {
+    act(() => {
+        root = create(<App />)
+    });
+    expect(root.toJSON()).toMatchSnapshot();
 });
