@@ -25,9 +25,9 @@ class Board extends React.Component {
             const dropSquare = e.target;
             const dragSquareId = e.dataTransfer.getData('dragSquareId');
 
+            // remove highlight of drop square when square drops on it
+            dropSquare.classList.remove('over');
             if (dragSquareId) {
-                // remove highlight of drop square when square drops on it
-                dropSquare.classList.remove('over');
                 this.swapColors(dragSquareId, dropSquare.id);
             }
         }
@@ -50,7 +50,7 @@ class Board extends React.Component {
             for (let j = 0;j < rows.length;j++) {
                 square.push(this.renderSquare(rows.length * i + j));
             }
-            rows[i] = <div className="board-row" key={i}>{square}</div>;
+            rows[i] = <div className='board-row' key={i}>{square}</div>;
         }
         return rows;
     }
@@ -70,7 +70,7 @@ class Board extends React.Component {
     render() {
         const board = this.renderBoard();
         return (
-            <div onDrop={this.onDrop} onDragOver={this.dragOver}>
+            <div data-testid='board' onDrop={this.onDrop} onDragOver={this.dragOver}>
                 {board}
             </div>
         );
