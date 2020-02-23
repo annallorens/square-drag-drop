@@ -2,13 +2,13 @@ import React from 'react';
 import ReacDOM from 'react-dom';
 import Square from './Square';
 
-import { render, fireEvent, cleanup, createEvent, act } from "@testing-library/react";
+import { render, fireEvent, cleanup, createEvent, act } from '@testing-library/react';
 
 afterEach(cleanup);
 jest.useFakeTimers();
 
 it('renders render square correctly', () => {
-  const div = document.createElement("div");
+  const div = document.createElement('div');
   ReacDOM.render(<Square />, div);
 });
 
@@ -32,7 +32,7 @@ describe('when drag starts', () => {
       jest.advanceTimersByTime(0);
     });
 
-    expect(mockSetData).toHaveBeenCalled();
+    expect(mockSetData).toHaveBeenCalledWith('dragSquareId', '1');
     expect(element.style.opacity).toEqual('0.1');
   });
 });
