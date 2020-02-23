@@ -45,14 +45,58 @@ describe('when testing the redered component', () => {
   });
 
   it('should render a square', () => {
+    const id = 1;
     const expectedProps = {
-      backgroundColor: '#0074D9',
+      id,
+      backgroundColor: boardInstance.state.backgroundColor[id],
       className: 'square',
-      draggable: 'true',
-      'id': 0
+      draggable: 'true'
     }
-    const square = boardInstance.renderSquare(0);
+    const square = boardInstance.renderSquare(id);
 
     expect(expectedProps).toEqual(square.props);
+  });
+});
+
+describe('when dragging over the board component', () => {
+  it('should prevent default', () => {
+    const { getByTestId } = render(<Board />);
+    const board = getByTestId('board');
+    const evt = createEvent.dragOver(board, { target: { id: '1' } });
+    spyOn(evt, 'preventDefault');
+
+    fireEvent(board, evt);
+
+    expect(evt.preventDefault).toHaveBeenCalled();
+  });
+
+  it('should not prevent default', () => {
+    const { getByTestId } = render(<Board />);
+    const board = getByTestId('board');
+    const evt = createEvent.dragOver(board);
+    spyOn(evt, 'preventDefault');
+
+    fireEvent(board, evt);
+
+    expect(evt.preventDefault).not.toHaveBeenCalled();
+  });
+});
+
+describe('when dropping on the board component', () => {
+  it('gets the dragging square id', () => {
+    const { getByTestId } = render(<Board />);
+    const board = getByTestId('board');
+    const mockGetData = jest.fn(() => 3);
+    const mockDragStartEvent = createEvent.drop(board);
+    // define 'dataTransfer' to dragStart event
+    Object.defineProperty(mockDragStartEvent, 'dataTransfer', {
+      value: {
+        getData: mockGetData
+      }
+    });
+
+    fireEvent(board, mockDragStartEvent);
+
+    expect(mockGetData).toHaveBeenCalledWith('dragSquareId');
   });
 });

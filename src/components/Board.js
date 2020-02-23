@@ -27,6 +27,8 @@ class Board extends React.Component {
 
             // remove highlight of drop square when square drops on it
             dropSquare.classList.remove('over');
+
+            // the dragging element should be square component
             if (dragSquareId) {
                 this.swapColors(dragSquareId, dropSquare.id);
             }
