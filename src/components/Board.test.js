@@ -8,12 +8,12 @@ import { create } from 'react-test-renderer';
 
 afterEach(cleanup);
 
-it('renders render square correctly', () => {
+it('renders the Board correctly', () => {
   const div = document.createElement('div');
   ReacDOM.render(<Board />, div);
 });
 
-describe('when testing the redered component', () => {
+describe('when testing the redered Board', () => {
   const board = create(<Board />);
   const boardInstance = board.getInstance();
   const boardRoot = board.root;
@@ -36,7 +36,6 @@ describe('when testing the redered component', () => {
       '#FF851B', '#FF4136', '#85144b', '#F012BE',
       '#B10DC9', '#111111', '#AAAAAA', '#DDDDDD'
     ];
-
     expect(backgroundColor).toEqual(boardInstance.state.backgroundColor);
 
     boardInstance.swapColors(0, 1);
