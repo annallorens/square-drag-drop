@@ -1,8 +1,7 @@
 import { create, act } from 'react-test-renderer';
 import React from 'react';
 import ReacDOM from 'react-dom';
-
-import App from './app.js';
+import App from './App';
 
 let root;
 
